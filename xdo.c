@@ -1860,8 +1860,8 @@ int xdo_set_active_modifiers(const xdo_t *xdo, Window window, charcodemap_t *act
 int xdo_get_pid_window(const xdo_t *xdo, Window window) {
   Atom type;
   int size;
-  long nitems;
-  unsigned char *data;
+  long nitems = 0;
+  unsigned char *data = NULL;
   int window_pid = 0;
 
   if (atom_NET_WM_PID == (Atom)-1) {
